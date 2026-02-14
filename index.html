@@ -374,7 +374,7 @@
       <h4 class="font-semibold text-lg mb-2">high-speed Wi-Fi</h4>
       <p class="text-gray-400 text-sm">Our school has Wi-Fi everywhere and online tools that make learning easy for all students..</p>
      </div>
-  </section><!-- Testimonials Section -->
+  </div></section><!-- Testimonials Section -->
   <section id="testimonials" class="py-24 px-6">
    <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16 aos">
@@ -389,7 +389,7 @@
        <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center"><i class="fas fa-user text-amber-400"></i>
        </div>
        <div>
-        <h5 class="font-semibold">TUYISENGE Jean Chrisostom/h5>
+        <h5 class="font-semibold">TUYISENGE Jean Chrisostom</h5>
         <p class="text-sm text-gray-500">Headboy in 2023</p>
        </div>
       </div>
@@ -559,22 +559,22 @@
   <div class="ai-chat-widget"><button class="chat-toggle" id="chatToggle" aria-label="Open chat assistant"> <i class="fas fa-robot"></i> </button>
    <div class="chat-window" id="chatWindow">
     <div class="chat-header">
-     <div class="chat-avatar"><i class="fas fa-robot text-gray-900"></i>
+     <div class="chat-avatar"><img src="https://i.postimg.cc/50jJ2fD6/BLAD.webp" alt="Chrisostom AI" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
      </div>
      <div>
-      <h4 class="font-semibold">CHRISOSTOM AI</h4>
-      <div class="chat-status"><span class="status-dot"></span> <span>Online - Ready to help</span>
+      <h4 class="font-semibold">Chrisostom AI</h4>
+      <div class="chat-status"><span class="status-dot"></span> <span>Your Teacher & Guide 👨‍🏫</span>
       </div>
      </div><button class="ml-auto text-gray-400 hover:text-white transition" id="chatClose"> <i class="fas fa-times text-xl"></i> </button>
     </div>
     <div class="chat-messages" id="chatMessages">
      <div class="message bot">
-      Hello! 👋 I'm CHRISOSTOM AI, your assistant for Kaarumuna Academy. I'm here to help you with any questions about admissions, programs, fees, facilities, and everything about our school. What would you like to know?
+      Hello! 👋 I'm Chrisostom AI. Think of me as your friendly teacher-guide here at IMENA TRINITY COLLEGE. Whether you want to chat about your day, ask about lessons, or need help with school stuff, I'm here for you! 😊 What shall we talk about?
      </div>
     </div>
-    <div class="quick-questions" id="quickQuestions"><button class="quick-btn" data-question="What are the school fees?">💰 Fees</button> <button class="quick-btn" data-question="How do I apply?">���� Apply</button> <button class="quick-btn" data-question="What programs do you offer?">📚 Programs</button> <button class="quick-btn" data-question="Is boarding available?">�� Boarding</button>
+    <div class="quick-questions" id="quickQuestions"><button class="quick-btn" data-question="What did you learn today?">📖 Today's lesson</button> <button class="quick-btn" data-question="How do I apply to join?">📝 Apply</button> <button class="quick-btn" data-question="Tell me a fun fact about Rwanda">🇷🇼 Fun fact</button> <button class="quick-btn" data-question="What's your favorite subject?">💬 Your fave subject?</button>
     </div>
-    <div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" placeholder="Type your question..." autocomplete="off"> <button class="chat-send" id="chatSend"> <i class="fas fa-paper-plane"></i> </button>
+    <div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything, like a teacher..." autocomplete="off"> <button class="chat-send" id="chatSend"> <i class="fas fa-paper-plane"></i> </button>
     </div>
    </div>
   </div>
@@ -823,7 +823,7 @@
             });
         }
 
-        // AI Chat functionality
+        // AI Chat functionality - Chrisostom AI, casual teacher-guide
         const chatToggle = document.getElementById('chatToggle');
         const chatWindow = document.getElementById('chatWindow');
         const chatClose = document.getElementById('chatClose');
@@ -832,47 +832,63 @@
         const chatMessages = document.getElementById('chatMessages');
         const quickQuestions = document.getElementById('quickQuestions');
 
-        // School knowledge base for AI responses
+        // Enhanced school knowledge base with casual, teacher-like responses
         const knowledgeBase = {
+            greeting: {
+                keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'howdy'],
+                response: "Hello there! 👋 It's wonderful to see you. I'm Chrisostom AI, your friendly guide and teacher here at IMENA TRINITY. How's your day going so far? Is there something exciting you'd like to learn about our school, or maybe just want to chat? 😊"
+            },
+            howareyou: {
+                keywords: ['how are you', 'how do you do', 'what\'s up', 'sup', 'how’s it going', 'feeling'],
+                response: "I'm doing great, thank you for asking! 😊 As a teacher-guide, every day is a new adventure helping students and parents. I'm here, ready to assist, encourage, and share a smile. More importantly—how are YOU doing today? Anything on your mind?"
+            },
+            favorite: {
+                keywords: ['favorite subject', 'what subject', 'like best', 'love to teach', 'favourite'],
+                response: "Oh, that's a fun question! 📚 If I had to pick, I'd say I love **English and Literature**—there's magic in stories and words. But honestly, every subject opens a new door for a young mind. What subject are you most curious about? I can tell you how we teach it here at IMENA TRINITY!"
+            },
+            learn: {
+                keywords: ['learn today', 'lesson', 'class', 'teach me', 'study'],
+                response: "Great question! In our school, learning is a journey. Today, our students might be exploring science experiments in the lab, solving math puzzles, or reading about Rwandan heroes. Is there a specific grade you're interested in? I can share what they're learning this term! 🧪📖"
+            },
+            rwanda: {
+                keywords: ['rwanda', 'country', 'kigali', 'bugesera', 'thousand hills', 'umuganda'],
+                response: "Ah, our beautiful Rwanda! 🇷🇼 Did you know we're called the 'Land of a Thousand Hills'? Here in Bugesera, we're proud of our community spirit. At school, we teach our students about our culture, history, and the importance of unity. In fact, we often start the day with a short talk about being a good patriot! Would you like to know more about our local area?"
+            },
+            apply: {
+                keywords: ['apply', 'admission', 'enroll', 'join', 'register', 'sign up'],
+                response: "Thinking of joining our school family? That's wonderful! 🎓 To apply for the 2026 year, you can fill out the form right here on our website (the 'Short Question Form' in the Admissions section). Or you can visit us in Bugesera, Ntarama. We'll need some documents like previous school reports and a birth certificate. I can guide you through it—what grade are you applying for?"
+            },
             fees: {
-                keywords: ['fee', 'fees', 'cost', 'price', 'tuition', 'payment', 'pay', 'money', 'afford', 'expensive', 'cheap'],
-                response: "Great question about fees! 💰\n\n**IMENA TRINITY COLLEGE:**\n• Nursery: Contact office for rates\n• Primary (Lower): Affordable rates\n• Primary (Upper): Competitive pricing\n• O'Level (S1-S4): Standard rates\n\nWe believe in quality education for all. Fees vary by level. Contact us for detailed fee structure:\n📧 tuyisengejeanchrisostome@gmail.com\n📞 +250 796 717 230"
-            },
-            admission: {
-                keywords: ['apply', 'admission', 'enroll', 'register', 'join', 'start', 'application', 'form', 'requirement', 'document'],
-                response: "Here's how to apply to Kaarumuna Academy! 📝\n\n**Steps:**\n1. Fill out the inquiry form on our website\n2. Submit required documents:\n   • Previous school records\n   • Birth certificate\n   • Passport photos\n3. Take the entrance exam (if applicable)\n4. Interview with parents\n\n**Contact Us:**\n📧 tuyisengejeanchrisostome@gmail.com\n📞 +250 796 717 230\n\nWe're located in Bugesera, Ntarama"
-            },
-            programs: {
-                keywords: ['program', 'course', 'subject', 'curriculum', 'study', 'learn', 'teach', 'class', 'offer', 'nursery', 'primary', 'o\'level', 'level'],
-                response: "We offer excellent programs! 📚\n\n**Our Levels:**\n• **Nursery** (Ages 2-5): Early childhood development\n• **Primary Lower** (Grades 1-3): Foundational academics\n• **Primary Upper** (Grades 4-6): Advanced curriculum\n• **O'Level** (S1-S4): Comprehensive secondary education\n\n**All levels include:**\n✓ Core academics\n✓ Kinyarwanda & English\n✓ Mathematics & Sciences\n✓ Sports & Extra activities\n✓ Character development\n\nWhich level interests you?"
-            },
-            contact: {
-                keywords: ['contact', 'phone', 'call', 'email', 'reach', 'talk', 'speak', 'message', 'number', 'address', 'location', 'where'],
-                response: "Here's how to reach us! 📞\n\n**Headmaster:**\nTuyisenge Jean Chrisostom\n\n**Phone:**\n+250 796 717 230\n\n**Email:**\ntuyisengejeanchrisostome@gmail.com\n\n**Location:**\nBugesera\nNtarama, Rwanda\n\nWe're ready to welcome you! Feel free to visit our campus anytime."
-            },
-            location: {
-                keywords: ['location', 'where', 'address', 'find', 'direction', 'map', 'place', 'area'],
-                response: "We're located in beautiful Bugesera! 📍\n\n**Address:**\nNtarama, Rwanda\n\n**Getting Here:**\n• Easy access from main roads\n• Clear signage to campus\n• Welcoming, secure environment\n\nWe'd love to welcome you for a visit! Contact us to arrange:\n📞 +250 796 717 230\n📧 tuyisengejeanchrisostome@gmail.com"
-            },
-            leadership: {
-                keywords: ['headmaster', 'principal', 'staff', 'teacher', 'director', 'leadership', 'administration'],
-                response: "Meet our leadership! 👨‍💼\n\n**Headmaster:**\nTuyisenge Jean Chrisostom\nLeading Kaarumuna Academy with dedication to quality education and student development.\n\nOur team is committed to:\n✓ Excellent academics\n✓ Student wellbeing\n✓ Moral development\n✓ Community engagement\n\nFor questions about our leadership:\n📞 +250 796 717 230"
+                keywords: ['fee', 'fees', 'cost', 'tuition', 'payment', 'money', 'scholarship'],
+                response: "Let's talk about fees! 💰 It's an important question. For the most accurate details, it's best to contact our office. But generally, we strive to keep our education affordable. We also have some scholarships for bright students! Would you like the phone number for the finance office? I can also tell you about what's included in the fees."
             },
             facilities: {
-                keywords: ['facility', 'lab', 'library', 'computer', 'sport', 'building', 'campus', 'equipment', 'modern', 'classroom'],
-                response: "Our campus is welcoming! 🏫\n\n**Facilities Include:**\n✓ Classroom blocks\n✓ Study areas\n✓ Playground\n✓ Sports fields\n✓ Meeting spaces\n✓ Clean facilities\n✓ Safe environment\n\nWe're constantly improving our campus to provide the best learning environment for all our students from nursery through O'Level.\n\nWant to visit? Contact us!"
+                keywords: ['facility', 'lab', 'library', 'computer', 'sport', 'classroom', 'campus'],
+                response: "Our campus is a great place to learn and grow! 🏫 We have science labs where students do experiments, a library full of books, computer rooms for ICT class, and a sports field for football and games. We believe in learning both in and out of the classroom. Would you like a tour? I can describe more!"
             },
             values: {
-                keywords: ['value', 'character', 'moral', 'discipline', 'conduct', 'behavior', 'respect'],
-                response: "Character Development is Central! 💫\n\nAt IMENA TRINITY COLLEGE, we focus on:\n✓ **Respect** - For teachers, peers, and community\n✓ **Integrity** - Honest and trustworthy conduct\n✓ **Hard Work** - Excellence through effort\n✓ **Responsibility** - For actions and community\n✓ **Cooperation** - Teamwork and unity\n\nOur education develops not just smart minds, but good hearts and strong character for life success."
+                keywords: ['discipline', 'character', 'values', 'patriotism', 'respect', 'moral'],
+                response: "This is so important! At IMENA TRINITY, our motto is 'Discipline, Success, and Patriotism.' 🌟 We don't just teach from textbooks. We have daily assemblies, guidance talks, and activities that build respect, responsibility, and love for our country. It's about shaping the whole person. How do you help children build character at home? I'd love to hear."
             },
-            greeting: {
-                keywords: ['hello', 'hi', 'hey', 'good', 'morning', 'afternoon', 'evening', 'help', 'thanks'],
-                response: "Hello! 👋 Welcome to Kaarumuna Academy!\n\nI'm CHRISOSTOM AI. I can help you with:\n\n• 📝 Admission information\n• 💰 Fees and costs\n• 📚 Our programs (Nursery to S3)\n• 🏫 Campus facilities\n• 📞 Contact & location\n• 👨‍💼 About our school\n\nWhat would you like to know?"
+            sports: {
+                keywords: ['sport', 'football', 'game', 'play', 'team', 'athletics'],
+                response: "We love sports here! ⚽ Students can play football, volleyball, and take part in athletics. It's a great way to learn teamwork and stay healthy. We have inter-house competitions that are always exciting! Do you play any sports? Maybe you'd like to join our school team one day."
+            },
+            day: {
+                keywords: ['typical day', 'routine', 'schedule', 'day at school'],
+                response: "A typical day at our school starts with a morning assembly—we sing the national anthem and share announcements. Then it's off to classes! 📚 We have lessons in the morning, a break for play and snacks, more classes, and then lunch. In the afternoon, there might be clubs, sports, or extra help. It's busy but fun! Would you like to know more about a specific grade's routine?"
             },
             thanks: {
-                keywords: ['thank', 'thanks', 'appreciate', 'helpful', 'great', 'good', 'nice', 'wonderful'],
-                response: "You're very welcome! 😊\n\nIt's my pleasure to help you learn about Kaarumuna Academy. Is there anything else you'd like to know?\n\nWe look forward to welcoming you and your family to our school! 🎓"
+                keywords: ['thank', 'thanks', 'appreciate', 'helpful'],
+                response: "You're most welcome! 😊 It's my absolute pleasure to chat with you. Helping others is what a teacher-guide does best. If you have any more questions later—about school, homework, or just to say hi—I'll be right here. Have a wonderful day!"
+            },
+            bye: {
+                keywords: ['bye', 'goodbye', 'see you', 'later', 'cya'],
+                response: "Goodbye for now, friend! 👋 Remember, learning never stops, and I'm always here when you need a guide or a chat. Take care and see you soon at IMENA TRINITY COLLEGE!"
+            },
+            fallback: {
+                keywords: [],
+                response: "That's a thoughtful question. 🤔 As your teacher-guide, I want to give you the best answer. Could you tell me a little more? Or perhaps you'd like to know about our **programs**, how to **apply**, or what our **campus** is like? I'm all ears! 👂😊"
             }
         };
 
@@ -880,30 +896,28 @@
             const message = userMessage.toLowerCase();
             let bestMatch = null;
             let highestScore = 0;
+            let bestTopic = 'fallback';
 
             for (const [topic, data] of Object.entries(knowledgeBase)) {
                 let score = 0;
                 for (const keyword of data.keywords) {
                     if (message.includes(keyword)) {
-                        score += 1;
+                        score += 2; // weight for exact keyword
+                    }
+                    // Check for word boundaries roughly (simple check)
+                    if (message.split(' ').some(word => word.includes(keyword))) {
+                         score += 1;
                     }
                 }
                 if (score > highestScore) {
                     highestScore = score;
-                    bestMatch = data.response;
+                    bestTopic = topic;
                 }
             }
-
-            if (!bestMatch || highestScore === 0) {
-                const fallbackResponses = [
-                    "That's a great question! 🤔 While I might not have the specific answer, our admissions team would love to help. You can:\n\n📞 Call: +250 796717230\n📧 Email: tuyisengejeanchrisostome@gmail.com\n\nOr ask me about:\n• Fees & scholarships\n• Programs & courses\n• Boarding & facilities\n• How to apply",
-                    "I want to make sure you get the right information! 😊\n\nFor detailed questions, our friendly staff is ready to help:\n\n📞 +250 796717230\n📧 tuyisengejeanchrisostome@gmail.com\n\nMeanwhile, I can tell you about our programs, fees, or admission process!",
-                    "Thank you for your interest in IMENA TRINITY ACADEMY! 🌟\n\nI'm here to help with common questions about:\n• Admissions & requirements\n• Fees & scholarships\n• Our programs & facilities\n• Boarding options\n\nWhat would you like to explore?"
-                ];
-                return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
-            }
-
-            return bestMatch;
+            // If score is very low, use fallback
+            if (highestScore < 1) bestTopic = 'fallback';
+            
+            return knowledgeBase[bestTopic]?.response || knowledgeBase.fallback.response;
         }
 
         function addMessage(text, isUser = false) {
@@ -940,7 +954,7 @@
                 hideTyping();
                 const response = findBestResponse(message);
                 addMessage(response);
-            }, 1000 + Math.random() * 1000);
+            }, 1000 + Math.random() * 800); // typing simulation
         }
 
         if (chatToggle && chatWindow) {
