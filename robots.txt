@@ -1,0 +1,6 @@
+# Allow all well-behaved search engines to explore the entire site
+User-agent: *
+Allow: /
+
+# Tell Google where to find your Sitemap (once you create one)
+Sitemap: https://stomcodev.github.io/IMENA-TRINITY-COLLEGE/sitemap.xml
